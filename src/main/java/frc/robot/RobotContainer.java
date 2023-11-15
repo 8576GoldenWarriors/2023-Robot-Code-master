@@ -46,7 +46,6 @@ public class RobotContainer {
 
 
 
-
     public final CommandXboxController drive_controller = new CommandXboxController(2);
 
     public final Joystick drive_joystick = new Joystick(OIConstants.kDriverControllerPort);
@@ -57,12 +56,14 @@ public class RobotContainer {
 
     
     public RobotContainer() {
+        //module.getAbsoluteEncoderRad();
         swerveSubsystem.setDefaultCommand(new SwerveJoystickCmd(
                 swerveSubsystem,
                 () -> -drive_joystick.getRawAxis(OIConstants.kDriverYAxis),
                 () -> drive_joystick.getRawAxis(OIConstants.kDriverXAxis),
                 () -> drive_joystick.getRawAxis(OIConstants.kDriverRotAxis),
                 () -> !drive_joystick.getRawButton(OIConstants.kDriverFieldOrientedButtonIdx)));
+
 
         configureButtonBindings();
     }

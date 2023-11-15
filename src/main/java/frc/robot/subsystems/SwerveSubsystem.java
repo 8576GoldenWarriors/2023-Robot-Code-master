@@ -95,6 +95,7 @@ public class SwerveSubsystem extends SubsystemBase {
     }
 
     public Rotation2d getRotation2d() {
+        //System.out.println("getRotation2d: " + Rotation2d.fromDegrees(getHeading()));
         return Rotation2d.fromDegrees(getHeading());
     }
 
@@ -118,6 +119,8 @@ public class SwerveSubsystem extends SubsystemBase {
         SmartDashboard.putNumber("EncoderReading2", m_cancoder2.getAbsolutePosition());
         SmartDashboard.putNumber("EncoderReading3", m_cancoder3.getAbsolutePosition());
         SmartDashboard.putNumber("EncoderReading4", m_cancoder4.getAbsolutePosition());*/
+        //frontLeft.getAbsoluteEncoderRad();
+        //backLeft.getAbsoluteEncoderRad();
     }
 
     public void stopModules() {

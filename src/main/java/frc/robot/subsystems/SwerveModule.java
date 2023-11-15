@@ -49,6 +49,7 @@ public class SwerveModule{
         turn_motor.setInverted(turningMotorReversed);
 
         drive_encoder = drive_motor.getEncoder();
+        //https://github.com/8576GoldenWarriors/2023-Robot-Code-masteroder();
         turn_encoder = turn_motor.getEncoder();
 
         drive_encoder.setPositionConversionFactor(ModuleConstants.kDriveEncoderRot2Meter);
@@ -66,6 +67,7 @@ public class SwerveModule{
 
 
     public double getDriveVelocity() {
+        System.out.println("getDriveVelocity(): "+drive_encoder.getVelocity());
         return drive_encoder.getVelocity();
     }
 
@@ -81,6 +83,7 @@ public class SwerveModule{
         double angle = absolute_encoder.getPosition();
         angle *= 2.0 * Math.PI;
         angle -= absoluteEncoderOffsetRad;
+        System.out.println("getAbsoluteEncoderRad(): "+angle * (absoluteEncoderReversed ? -1.0 : 1.0));
         return angle * (absoluteEncoderReversed ? -1.0 : 1.0);
     }
     public void resetEncoders() {
